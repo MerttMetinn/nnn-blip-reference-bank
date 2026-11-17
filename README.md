@@ -1,4 +1,4 @@
-# Can BLIP captions replace in-domain queries in Nearest Neighbor Normalization?
+# Can Generated Captions Replace In-Domain Queries? Reference-Bank Domain Mismatch in Nearest Neighbor Normalization
 
 Research project for YZM5110 Multimodal Learning (Fall 2026).
 
@@ -35,6 +35,8 @@ measures and the comparison with the paper's published numbers are in
 
 - CLIP `openai/clip-vit-base-patch32`; BLIP `Salesforce/blip-image-captioning-base`
   (beam search, 3 beams, max 30 new tokens). Exact revisions in `REUSED_COMPONENTS.md`.
+- Preprocessing: default `CLIPProcessor` (resize to 224, center crop, CLIP
+  normalisation); image and text embeddings are L2-normalised and cached once.
 - Gallery and queries: Karpathy COCO test (5,000 images, 25,010 captions).
 - Alpha and k are tuned on Karpathy val only (alpha 0.25-1.5 step 0.125,
   k = 1..512 in powers of two, best R@1); the test set is never used for tuning.
@@ -84,7 +86,8 @@ Extract into `data\coco\val2014\`, `data\karpathy\extracted\` and
 
 - COCO val2014 (6.65 GB): https://cocodataset.org/#termsofuse
 - Karpathy splits: `dataset_coco.json`, `dataset_flickr30k.json`
-- Flickr30k images (4.39 GB): needed only for arm F
+- Flickr30k images (4.39 GB): needed only for arm F; research
+  use under the Flickr30k terms: https://shannon.cs.illinois.edu/DenotationGraph/
 
 ## Full run
 
@@ -104,6 +107,14 @@ python scripts\make_figures.py
 
 Measured times: CLIP features 4.9 min; BLIP 26.4 min for 30,009 COCO images and
 12.0 min for 14,151 Flickr images; alpha/k sweep about 4 s per arm and seed.
+
+**Resources.** The quick tests run on CPU without any data. Reproducing the
+reported numbers needs the datasets above (about 11 GB) and a CUDA GPU with at
+least 6 GB of memory; the full run takes under one hour on the GPU listed in
+Setup. `scripts\make_table.py` and `scripts\make_figures.py` rebuild the reported tables
+and figures from the saved outputs in `results/` without a GPU or the datasets;
+`scripts\failure_analysis.py` also needs the cached features from
+`src\extract_clip.py`.
 
 ## Layout
 
