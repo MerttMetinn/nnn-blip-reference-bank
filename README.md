@@ -117,5 +117,5 @@ Measured times: CLIP features 4.9 min; BLIP 26.4 min for 30,009 COCO images and
 
 ## Records
 
-- `AI_USE.md`: use of AI tools
+- `report/AI_Usage_Statement.pdf`: use of AI tools
 - `REUSED_COMPONENTS.md`: reused code, models and data

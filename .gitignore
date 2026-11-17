@@ -30,3 +30,6 @@ results/logs/*.md
 # Tool settings
 .claude/
 .vscode/
+
+# Office lock files
+~$*
