@@ -1,0 +1,17 @@
+{
+  "model_id": "openai/clip-vit-base-patch32",
+  "model_revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+  "torch": "2.11.0+cu128",
+  "gpu": "NVIDIA GeForce RTX 5070 Laptop GPU",
+  "limit": null,
+  "batch_size": 256,
+  "coco_img_count": 40504,
+  "feature_dim": 512,
+  "coco_img_seconds": 133.1,
+  "coco_txt_seconds": 75.7,
+  "coco_txt_count": 202654,
+  "flickr_txt_seconds": 79.4,
+  "flickr_txt_count": 145000,
+  "total_seconds": 292.2,
+  "peak_gpu_memory_mb": 1337.5
+}
