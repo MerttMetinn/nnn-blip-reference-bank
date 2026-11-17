@@ -1,0 +1,15 @@
+{
+ "arm": "B",
+ "seed": 2,
+ "set": "coco_test (Karpathy test)",
+ "queries": 25010,
+ "gallery": 5000,
+ "alpha": 0.5,
+ "k": 8,
+ "reference_count": 29000,
+ "bias_seconds": 0.0,
+ "retrieve_seconds": 0.005,
+ "r1": 34.04638171195984,
+ "r5": 59.508198499679565,
+ "r10": 69.8160707950592
+}
