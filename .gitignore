@@ -1,0 +1,32 @@
+# Environment
+.venv/
+__pycache__/
+*.pyc
+
+# Data and large files (not in the repo; download instructions in README)
+data/
+features/
+features_test/
+*.zip
+*.npy
+*.npz
+*.pt
+*.safetensors
+# Small result files are kept
+!results/**/*.npz
+
+# Copyrighted PDFs (papers)
+papers/
+*.pdf
+# Our own report and slides are kept
+!report/*.pdf
+
+# Local working notes (not published)
+PROJECT_CONTEXT.md
+notes/
+results/logs/*.md
+.git-local-history/
+
+# Tool settings
+.claude/
+.vscode/
